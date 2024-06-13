@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Checkbox</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.addEventListener("keypress", (e) => {
+        if (
+          e.charCode === 32 &&
+          e.target.className === "custom-checkbox-container"
+        ) {
+          const checkbox = document.getElementById("default-checkbox");
+          checkbox.checked = !checkbox.checked;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- the native checkbox is by default set to display: none, remove line 26 below to show the native checkbox as well -->
+    <label class="label">
+      <input
+        class="default-checkbox"
+        type="checkbox"
+        id="default-checkbox"
+        tabindex="0"
+        style="display: none"
+      />
+      <div class="custom-checkbox-container" tabindex="0">
+        <span class="custom-checkbox" role="checkbox">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none"></rect>
+            <polyline
+              points="216 72.005 104 184 48 128.005"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16"
+            ></polyline>
+          </svg>
+        </span>
+      </div>
+    </label>
+  </body>
+</html>
